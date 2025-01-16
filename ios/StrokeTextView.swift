@@ -14,15 +14,17 @@ class StrokeTextView: RCTView {
 
         label.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(label)
+        
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            label.topAnchor.constraint(equalTo: self.topAnchor),
+            label.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.bridge?.uiManager.setSize(label.intrinsicContentSize, for: self)
     }
 
     required init?(coder aDecoder: NSCoder) {

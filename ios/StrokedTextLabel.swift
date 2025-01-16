@@ -50,12 +50,7 @@ class StrokedTextLabel: UILabel {
 
     override var intrinsicContentSize: CGSize {
         var contentSize = super.intrinsicContentSize
-        if customWidth > 0 {
-            contentSize.width = customWidth
-        } else {
-            contentSize.width += outlineWidth
-        }
-
+        contentSize.width += outlineWidth
         contentSize.height += outlineWidth
         return contentSize
     }
